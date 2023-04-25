@@ -1,9 +1,6 @@
-import uvicorn
-
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from config.config import settings
 from app import database
 from app.controllers import clustering_server
 from app.helpers.nlp_preload import nlp_service
