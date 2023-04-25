@@ -6,6 +6,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from config.config import settings
 from app import database
 from app.controllers import clustering_server
+from app.helpers.nlp_preload import nlp_service
+from app.helpers.asynchronous import async_wrap
 from app.middlewares.cors import apply_cors
 from app.settings import AppSettings
 
@@ -24,6 +26,9 @@ async def app_init():
 
     # ADD ROUTES
     app.include_router(clustering_server, prefix="/api")
+
+    # Load nlp model
+    await async_wrap(nlp_service.initialize())
 
 
 @app.get("/ping", summary="Health check usage only")
