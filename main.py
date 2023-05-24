@@ -25,7 +25,7 @@ async def app_init():
     app.include_router(clustering_server, prefix="/api")
 
     # Load nlp model
-    await async_wrap(nlp_service.initialize())
+    await async_wrap(nlp_service.initialize)()
 
 
 @app.get("/ping", summary="Health check usage only")
