@@ -44,6 +44,6 @@ async def initialize():
     )
 
     # CREATE DATA
-    await init_collections()
+    # await init_collections()
 
     print("Database is successfully initialized.")
