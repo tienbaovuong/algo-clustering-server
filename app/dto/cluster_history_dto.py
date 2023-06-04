@@ -31,3 +31,10 @@ class ClusterHistoryPaginationData(BasePaginationResponseData):
 
 class ClusterHistoryPaginationResponse(BaseResponseData):
     data: ClusterHistoryPaginationData
+
+
+#DTO for update request
+class ClusterHistoryPutRequest(BaseModel):
+    name: str
+    description: Optional[str]
+    children: List[ClusterGroupData]
