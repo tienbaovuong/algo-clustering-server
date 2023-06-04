@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
 from app import database
-from app.controllers import clustering_server
+from app.routers import routers
 from app.helpers.nlp_preload import nlp_service
 from app.helpers.asynchronous import async_wrap
 from app.middlewares.cors import apply_cors
@@ -21,7 +21,8 @@ async def app_init():
     await database.initialize()
 
     # ADD ROUTES
-    app.include_router(clustering_server, prefix="/api")
+    for router in routers:
+        app.include_router(**router)
 
     # Load nlp model
     await async_wrap(nlp_service.initialize)()
