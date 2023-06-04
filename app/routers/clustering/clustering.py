@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, status as http_status
+from fastapi import APIRouter
 
 
-route = APIRouter(tags=['Clustering'])
+route = APIRouter(tags=['Clustering'], prefix="clustering")

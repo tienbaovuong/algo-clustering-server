@@ -1,4 +1,5 @@
 from typing import Optional, List
+from datetime import datetime
 from pydantic import BaseModel
 
 from app.models.base import RootModel
@@ -24,3 +25,4 @@ class ClusterHistory(RootModel):
     name: str
     description: Optional[str]
     children: List[ClusterGroupData]
+    updated_at: datetime
