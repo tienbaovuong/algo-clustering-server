@@ -20,8 +20,8 @@ async def init_collection(col: Type[Document], file_path: Union[str, Path]):
             if item_id and item_id.get("$oid"):
                 default_item.update({"_id": item_id.get("$oid")})
             item_created_at = default_item.get("created_at")
-            if item_created_at and item_created_at.get("$date"):
-                default_item.update({"created_at": item_created_at.get("$date")})
+            if item_created_at and item_created_at.get("$date") and item_created_at.get("$date").get("$numberLong"):
+                default_item.update({"created_at": item_created_at.get("$date").get("$numberLong")})
             item = col(**default_item)
             await item.create()
         print(f"Successfully init data for collection {col.__name__}")
@@ -30,7 +30,7 @@ async def init_collection(col: Type[Document], file_path: Union[str, Path]):
 async def init_collections():
     # Data collections
     await init_collection(
-        ClusterHistory,
+        ThesisData,
         Path(__file__).parent.resolve() / "data/thesis_data.json",
     )
 
