@@ -12,9 +12,9 @@ from app.models.cluster_history import ClusterHistory
 async def init_collection(col: Type[Document], file_path: Union[str, Path]):
     existing_items = await col.find_all(limit=5).to_list()
     if not existing_items:
-        fileVar = open(file_path, encoding="utf-8")
-        default_items = json.load(fileVar)
-        fileVar.close()
+        f = open(file_path, encoding="utf-8")
+        default_items = json.load(f)
+        f.close()
         for default_item in default_items:
             item_id = default_item.get("_id")
             if item_id and item_id.get("$oid"):
@@ -28,8 +28,11 @@ async def init_collection(col: Type[Document], file_path: Union[str, Path]):
 
 
 async def init_collections():
-    # Implement later
-    pass
+    # Data collections
+    await init_collection(
+        ClusterHistory,
+        Path(__file__).parent.resolve() / "data/thesis_data.json",
+    )
 
 
 async def initialize():
@@ -48,6 +51,6 @@ async def initialize():
     )
 
     # CREATE DATA
-    # await init_collections()
+    await init_collections()
 
     print("Database is successfully initialized.")

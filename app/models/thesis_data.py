@@ -36,3 +36,4 @@ class ThesisData(RootModel, ThesisDataInput):
         ]
 
     need_nlp_extract: bool = True
+    nlp_job_id: Optional[str]

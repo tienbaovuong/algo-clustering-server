@@ -1,4 +1,4 @@
 from fastapi import APIRouter
 
 
-route = APIRouter(tags=['Clustering'], prefix="clustering")
+route = APIRouter(tags=['Clustering'], prefix="/clustering")
