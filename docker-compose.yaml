@@ -17,5 +17,24 @@ services:
     ports:
       - "8001:8001"
 
+  redis:
+    image: bitnami/redis
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis:/bitnami/redis
+
+  worker:
+    build: .
+    command: make handler
+    depends_on:
+      - clustering
+      - redis
+      - mongodb
+
 volumes:
   mongodb:
+  redis:

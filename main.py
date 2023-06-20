@@ -2,6 +2,7 @@ from fastapi import FastAPI
 
 from app import database
 from app.routers import routers
+from app.worker.handler import init_celery
 from app.helpers.nlp_preload import nlp_service
 from app.helpers.asynchronous import async_wrap
 from app.middlewares.cors import apply_cors
@@ -26,6 +27,8 @@ async def app_init():
 
     # Load nlp model
     await async_wrap(nlp_service.initialize)()
+
+    init_celery()
 
 
 @app.get("/ping", summary="Health check usage only")
