@@ -34,3 +34,4 @@ watchfiles==0.18.1
 websockets==10.4
 celery==5.2.7
 redis==4.5.4
+slowapi==0.1.8

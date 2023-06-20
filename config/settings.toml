@@ -1,8 +1,11 @@
 [default]
 ALLOWED_ORIGINS = []
-API_URL=http://localhost:8001
 CELERY_BROKER_URL=redis://redis:6379/0
 CELERY_RESULT_BACKEND=redis://redis:6379/0
+INTERNAL_TOKEN=default_token
 MONGO_DSN = "mongodb://localhost:27017/ClusteringDB"
 JWT_SECRET_KEY = ""
 JWT_ALGORITHM = "HS256"
+
+[worker]
+API_URL=http://backend:8001

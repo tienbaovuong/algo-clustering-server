@@ -7,6 +7,9 @@ from motor import motor_asyncio
 from app.settings.app_settings import AppSettings
 from app.models.thesis_data import ThesisData
 from app.models.cluster_history import ClusterHistory
+import logging
+
+_logger = logging.getLogger(__name__)
 
 
 async def init_collection(col: Type[Document], file_path: Union[str, Path]):
@@ -24,7 +27,7 @@ async def init_collection(col: Type[Document], file_path: Union[str, Path]):
                 default_item.update({"created_at": item_created_at.get("$date").get("$numberLong")})
             item = col(**default_item)
             await item.create()
-        print(f"Successfully init data for collection {col.__name__}")
+        _logger.info(f"Successfully init data for collection {col.__name__}")
 
 
 async def init_collections():
@@ -53,4 +56,4 @@ async def initialize():
     # CREATE DATA
     await init_collections()
 
-    print("Database is successfully initialized.")
+    _logger.info("Database is successfully initialized.")

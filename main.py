@@ -5,6 +5,8 @@ from app.routers import routers
 from app.worker.handler import init_celery
 from app.helpers.nlp_preload import nlp_service
 from app.helpers.asynchronous import async_wrap
+from app.middlewares.limiters import add_limiters
+from app.middlewares.exception_handlers import add_exception_handlers
 from app.middlewares.cors import apply_cors
 from app.settings import AppSettings
 
@@ -16,7 +18,9 @@ async def app_init():
     app_settings = AppSettings()
 
     # middleware
+    add_limiters(app)
     apply_cors(app, app_settings.allowed_origins)
+    add_exception_handlers(app)
 
     # INIT DATABASE
     await database.initialize()
