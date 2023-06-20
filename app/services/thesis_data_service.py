@@ -1,12 +1,15 @@
-from typing import Optional
+from typing import Optional, List
 from datetime import datetime
+
 from beanie import PydanticObjectId
-from beanie.operators import RegEx, GTE, Eq
+from beanie.operators import RegEx, GTE, Eq, In
+
+from app.helpers.exceptions import NotFoundException
 from app.dto.thesis_data_dto import ThesisDataCreateRequest, ShortThesisData, FullThesisData
 from app.models.thesis_data import ThesisData
 
 class ThesisDataService:
-    async def list(
+    async def list_thesis(
         self,
         title: Optional[str],
         semester: Optional[str],
@@ -33,8 +36,7 @@ class ThesisDataService:
     ):
         thesis_data = await ThesisData.find_one({'_id': PydanticObjectId(thesis_id)}).project(FullThesisData)
         if not thesis_data:
-            # Exception module is not implemented so we use this
-            raise Exception("No thesis")
+            raise NotFoundException("No thesis")
         return thesis_data
 
     async def create(
@@ -52,5 +54,32 @@ class ThesisDataService:
     ):
         thesis = await ThesisData.find_one({'_id': PydanticObjectId(thesis_id)})
         if not thesis:
-            raise Exception("No thesis")
+            raise NotFoundException("No thesis")
         await thesis.delete()
+
+    async def get_list_by_ids(
+        self,
+        list_ids: List[str],
+    ):
+        thesis_list = await ThesisData.find_many(
+            In(ThesisData.id, list_ids)
+        ).to_list()
+        return thesis_list
+    
+    async def update_nlp(
+        self,
+        thesis_id: str,
+        title_vector: List,
+        category_vector: List,
+        expected_result: List,
+        problem_solve: List,
+    ):
+        update_data = {
+            "title_vector": title_vector,
+            "category_vector": category_vector,
+            "expected_result": expected_result,
+            "problem_solve": problem_solve,
+            "updated_at": datetime.utcnow(),
+            "need_nlp_extract": False
+        }
+        await ThesisData.find_one({'_id': PydanticObjectId(thesis_id)}).update({"$set": update_data})

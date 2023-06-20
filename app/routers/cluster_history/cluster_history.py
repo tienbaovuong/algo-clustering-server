@@ -16,7 +16,7 @@ async def get_list_cluster_history(
     page: int = Query(1),
     limit: int = Query(10),
 ):
-    items, total = await ClusterHistoryService().list(
+    items, total = await ClusterHistoryService().list_history(
         name=name,
         page=page,
         limit=limit,

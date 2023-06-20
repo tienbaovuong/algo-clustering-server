@@ -33,8 +33,11 @@ def preprocess_thesis(self,thesis: Dict):
         ]
         output_features = nlp_service.extract_feature(input_line)
         try:
+            thesis_id = thesis.get('_id')
+            if not thesis_id:
+                thesis_id = thesis.get('id')
             res = backend.put(
-                "/internal_api/v1/thesis_data/update_nlp",
+                f"/internal_api/v1/thesis_data/{thesis_id}/update_nlp",
                 json={
                     "title_vector": output_features[0],
                     "category_vector": output_features[1],

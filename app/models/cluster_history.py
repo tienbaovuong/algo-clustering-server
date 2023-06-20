@@ -19,7 +19,7 @@ class ClusterGroupData(BaseModel):
 
 
 class JobStatusType(str, RootEnum):
-    QUERYING_DATA = "QUERYING DATA"
+    FAILED = "FAILED"
     WAITING_NLP = "WAITING NLP"
     CLUSTERING = "CLUSTERING"
     FINISHED = "FINISHED"
@@ -28,7 +28,14 @@ class JobStatusType(str, RootEnum):
 class ClusterJobStatus(BaseModel):
     total_done_nlp: int
     total_thesis: int
-    status: dict
+    status: JobStatusType
+
+
+class ClusterConfig(BaseModel):
+    order: list = [0, 1, 2, 3]
+    number_of_clusters: int = 10
+    max_item_each_cluster: int = 10
+
 
 class ClusterHistory(RootModel):
     class Collection:
@@ -40,3 +47,4 @@ class ClusterHistory(RootModel):
     non_clustered_thesis: List[MinimumThesisData]
     updated_at: datetime
     cluster_job_status: ClusterJobStatus
+    config: ClusterConfig

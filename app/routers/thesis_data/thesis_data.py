@@ -17,7 +17,7 @@ async def get_list_thesis_data(
     page: int = Query(1),
     limit: int = Query(10),
 ):
-    items, total = await ThesisDataService().list(
+    items, total = await ThesisDataService().list_thesis(
         title=title,
         semester=semester,
         created_at=created_at,

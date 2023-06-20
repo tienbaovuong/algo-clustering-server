@@ -5,7 +5,7 @@ from datetime import datetime
 from app.dto.common import (
     BasePaginationResponseData, BaseResponseData, BeanieDocumentWithId
 )
-from app.models.cluster_history import ClusterGroupData, ClusterJobStatus
+from app.models.cluster_history import ClusterGroupData, ClusterJobStatus, MinimumThesisData, ClusterConfig
 
 
 # DTO for list response (Inherit BeanieDocumentWithId so the response include databaseID)
@@ -19,7 +19,14 @@ class ShortClusterHistory(BeanieDocumentWithId):
 
 # DTO for detail response
 class FullClusterHistory(ShortClusterHistory):
-    children: List[ClusterGroupData]
+    clusters: List[ClusterGroupData]
+    non_clustered_thesis: List[MinimumThesisData]
+    config: ClusterConfig
+
+
+# DTO for worker response
+class WorkerClusterHistory(FullClusterHistory):
+    ready_for_cluster: Optional[bool]
 
 
 class ClusterHistoryResponse(BaseResponseData):
@@ -30,12 +37,24 @@ class ClusterHistoryPaginationData(BasePaginationResponseData):
     items: List[ShortClusterHistory]
 
 
+class WorkerClusterHistoryResponse(BaseResponseData):
+    data: Optional[WorkerClusterHistory]
+
+
 class ClusterHistoryPaginationResponse(BaseResponseData):
     data: ClusterHistoryPaginationData
 
 
 #DTO for update request
 class ClusterHistoryPutRequest(BaseModel):
-    name: str
+    name: Optional[str]
     description: Optional[str]
-    children: List[ClusterGroupData]
+    clusters: Optional[List[ClusterGroupData]]
+
+
+class ClusterHistoryResultPutRequest(BaseModel):
+    cluster_result: List
+
+
+class ClusterHistoryStatusPutRequest(BaseModel):
+    status: ClusterJobStatus
