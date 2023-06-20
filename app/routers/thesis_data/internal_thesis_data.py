@@ -18,8 +18,8 @@ async def update_thesis_nlp_data(
         thesis_id=thesis_id,
         title_vector=data.title_vector,
         category_vector=data.category_vector,
-        expected_result=data.expected_result,
-        problem_solve=data.problem_solve
+        expected_result_vector=data.expected_result_vector,
+        problem_solve_vector=data.problem_solve_vector
     )
 
     return BaseResponse(

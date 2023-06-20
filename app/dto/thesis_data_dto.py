@@ -53,5 +53,5 @@ class ThesisDataCreateRequest(BaseModel):
 class ThesisDataUpdateNlpRequest(BaseModel):
     title_vector: list
     category_vector: list
-    expected_result: list
-    problem_solve: list
+    expected_result_vector: list
+    problem_solve_vector: list

@@ -1,11 +1,12 @@
 from pydantic import BaseModel
-from typing import List, Optional
+from typing import List, Optional, Dict
 from datetime import datetime
 
 from app.dto.common import (
     BasePaginationResponseData, BaseResponseData, BeanieDocumentWithId
 )
 from app.models.cluster_history import ClusterGroupData, ClusterJobStatus, MinimumThesisData, ClusterConfig
+from app.models.thesis_data import ThesisData
 
 
 # DTO for list response (Inherit BeanieDocumentWithId so the response include databaseID)
@@ -27,6 +28,7 @@ class FullClusterHistory(ShortClusterHistory):
 # DTO for worker response
 class WorkerClusterHistory(FullClusterHistory):
     ready_for_cluster: Optional[bool]
+    detail_thesis_dict: Optional[Dict[str, ThesisData]]
 
 
 class ClusterHistoryResponse(BaseResponseData):
@@ -53,7 +55,7 @@ class ClusterHistoryPutRequest(BaseModel):
 
 
 class ClusterHistoryResultPutRequest(BaseModel):
-    cluster_result: List
+    cluster_result: List[dict]
 
 
 class ClusterHistoryStatusPutRequest(BaseModel):

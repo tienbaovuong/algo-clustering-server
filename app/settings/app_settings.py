@@ -36,7 +36,7 @@ class AppSettings(BaseSettings):
     
     @property
     def celery_broker_url(self):
-        return settings.get("CELERY_BACKEND_URL")
+        return settings.get("CELERY_BROKER_URL")
     
     @property
     def celery_result_backend(self):

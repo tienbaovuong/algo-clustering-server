@@ -1,9 +1,9 @@
 import time
+import math
 
 from celery.utils.log import get_task_logger
 from httpx import HTTPStatusError
 
-from app.services.clustering_service import SSMC_FCM
 from app.worker.handler import celery
 from app.worker.adapters import backend
 
@@ -21,6 +21,7 @@ def schedule_clustering(history_id) -> str:
     time_limit=600,
 )
 def cluster_thesis(history_id: str):
+    logger.info(backend.base_url)
     try:
         while(True):
             try:
@@ -28,7 +29,7 @@ def cluster_thesis(history_id: str):
                     f"/internal_api/v1/cluster_history/{history_id}/worker_data"
                 )
                 history_data.raise_for_status()
-                parse_data = history_data.json()
+                parse_data = history_data.json().get("data")
                 if parse_data.get("ready_for_cluster"):
                     break
                 else:
@@ -37,12 +38,28 @@ def cluster_thesis(history_id: str):
                 time.sleep(5.0)
                 continue
 
-        cluster = SSMC_FCM(dataset=parse_data)
-        cluster.clustering()
+        result_data = []
+        thesis_list = parse_data.get("non_clustered_thesis")
+        min_size = math.floor(len(thesis_list) / 3)
+        cluster_1 = {
+            "name": "Cluster 1",
+            "children": thesis_list[:min_size]
+        }
+        cluster_2 = {
+            "name": "Cluster 2",
+            "children": thesis_list[min_size : min_size * 2]
+        }
+        cluster_3 = {
+            "name": "Cluster 3",
+            "children": thesis_list[min_size * 2:]
+        }
+        result_data.append(cluster_1)
+        result_data.append(cluster_2)
+        result_data.append(cluster_3)
         backend.put(
             f"/interal_api/v1/cluster_history/{history_id}/cluster_result",
             json={
-                "data": cluster
+                "data": result_data
             }
         )
         logger.info("Finish cluster, ref_id: %s" % history_id)

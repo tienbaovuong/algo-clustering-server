@@ -25,6 +25,9 @@ async def init_collection(col: Type[Document], file_path: Union[str, Path]):
             item_created_at = default_item.get("created_at")
             if item_created_at and item_created_at.get("$date") and item_created_at.get("$date").get("$numberLong"):
                 default_item.update({"created_at": item_created_at.get("$date").get("$numberLong")})
+            item_updated_at = default_item.get("updated_at")
+            if item_updated_at and item_updated_at.get("$date") and item_updated_at.get("$date").get("$numberLong"):
+                default_item.update({"updated_at": item_updated_at.get("$date").get("$numberLong")})
             item = col(**default_item)
             await item.create()
         _logger.info(f"Successfully init data for collection {col.__name__}")

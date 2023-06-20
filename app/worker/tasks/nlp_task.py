@@ -4,7 +4,7 @@ from celery.utils.log import get_task_logger
 from celery.exceptions import TimeLimitExceeded
 from httpx import HTTPStatusError
 
-from app.helpers.nlp_preload import nlp_service
+from app.helpers.nlp_preload import NLP
 from app.worker.handler import celery
 from app.worker.adapters import backend
 
@@ -12,18 +12,23 @@ logger = get_task_logger(__name__)
 
 
 def schedule_preprocess(thesis: Dict) -> str:
-    task = preprocess_thesis.delay(thesis)
+    thesis_dict = {
+        "title": thesis.get("title"),
+        "category": thesis.get("category"),
+        "expected_result": thesis.get("expected_result"),
+        "problem_solve": thesis.get("problem_solve"),
+        "id": str(thesis.get("id"))
+    }
+    task = preprocess_thesis.delay(thesis_dict)
     logger.info("Created a celery task id=%s" % task.id)
     return task.id
 
 
 @celery.task(
-    bind=True,
-    max_retries=3,
     rate_limit="50/s",
-    time_limit=60
+    time_limit=120
 )
-def preprocess_thesis(self,thesis: Dict):
+def preprocess_thesis(thesis: Dict):
     try:
         input_line = [
             thesis.get("title", ""),
@@ -31,6 +36,8 @@ def preprocess_thesis(self,thesis: Dict):
             thesis.get("expected_result", ""),
             thesis.get("problem_solve", "")
         ]
+        nlp_service = NLP()
+        nlp_service.initialize()
         output_features = nlp_service.extract_feature(input_line)
         try:
             thesis_id = thesis.get('_id')
@@ -41,8 +48,8 @@ def preprocess_thesis(self,thesis: Dict):
                 json={
                     "title_vector": output_features[0],
                     "category_vector": output_features[1],
-                    "expected_result": output_features[2],
-                    "problem_solve": output_features[3]
+                    "expected_result_vector": output_features[2],
+                    "problem_solve_vector": output_features[3]
                 },
             )
             res.raise_for_status()
@@ -54,4 +61,3 @@ def preprocess_thesis(self,thesis: Dict):
         return
     except Exception as ex:
         logger.exception(ex)
-        self.retry(countdown=5)

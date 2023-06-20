@@ -13,8 +13,8 @@ class NLP():
 
     def initialize(self):
         # Load model
-        self.phobert = AutoModel.from_pretrained("vinai/phobert-base-v2")
-        self.tokenizer = AutoTokenizer.from_pretrained("vinai/phobert-base-v2")
+        self.phobert = AutoModel.from_pretrained("model")
+        self.tokenizer = AutoTokenizer.from_pretrained("model")
 
         # Stop word
         fname = 'app/helpers/vn_stopword.txt'
@@ -22,6 +22,7 @@ class NLP():
 
     def extract_feature(self, lines):
         if not self.phobert or not self.tokenizer:
+            print("ohno")
             return None
         features_list = []
         for line in lines:
@@ -36,7 +37,8 @@ class NLP():
 
             with torch.no_grad():
                 features = self.phobert(input_ids)
-            features_list.append(features)
+            v_features = features[0][:, 0, :]
+            features_list.append(v_features[0].tolist())
         return features_list
 
 nlp_service = NLP()

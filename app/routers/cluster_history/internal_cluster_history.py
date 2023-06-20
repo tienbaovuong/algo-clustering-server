@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Query
+from fastapi import APIRouter
 from app.dto.common import BaseResponse
 from app.dto.cluster_history_dto import WorkerClusterHistoryResponse, ClusterHistoryResultPutRequest, ClusterHistoryStatusPutRequest
 from app.services.cluster_history_service import ClusterHistoryService
