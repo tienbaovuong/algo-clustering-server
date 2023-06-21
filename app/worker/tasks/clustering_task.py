@@ -28,6 +28,8 @@ def cluster_thesis(history_id: str):
                 history_data = backend.get(
                     f"/internal_api/v1/cluster_history/{history_id}/worker_data"
                 )
+                if history_data.status_code == 404:
+                    return
                 history_data.raise_for_status()
                 parse_data = history_data.json().get("data")
                 if parse_data.get("ready_for_cluster"):
