@@ -56,12 +56,13 @@ def cluster_thesis(history_id: str):
         result_data.append(cluster_1)
         result_data.append(cluster_2)
         result_data.append(cluster_3)
-        backend.put(
-            f"/interal_api/v1/cluster_history/{history_id}/cluster_result",
+        res = backend.put(
+            f"/internal_api/v1/cluster_history/{history_id}/cluster_result",
             json={
-                "data": result_data
+                "cluster_result": result_data
             }
         )
+        res.raise_for_status()
         logger.info("Finish cluster, ref_id: %s" % history_id)
     except Exception as error:
         logger.exception(error)
@@ -70,7 +71,7 @@ def cluster_thesis(history_id: str):
 
 def update_history_data(history_id: str, status: str):
     backend.put(
-        f"/interal_api/v1/cluster_history/{history_id}/status",
+        f"/internal_api/v1/cluster_history/{history_id}/status",
         json={
             "status": status
         }

@@ -165,9 +165,17 @@ class ClusterHistoryService:
                     res = AsyncResult(value.nlp_job_id)
                     state = str(res.state)
                     if state == "FAILURE" or (state == "PENDING" and value.updated_at < datetime.utcnow() - timedelta(minutes=5)):
-                        schedule_preprocess(value.dict())
+                        task_id = schedule_preprocess(value.dict())
+                        await value.update({"$set": {
+                            "nlp_job_id": task_id,
+                            "updated_at": datetime.utcnow()
+                        }})
                 else:
-                    schedule_preprocess(value.dict())
+                    task_id = schedule_preprocess(value.dict())
+                    await value.update({"$set": {
+                            "nlp_job_id": task_id,
+                            "updated_at": datetime.utcnow()
+                        }})
 
         new_total = len(thesis_list)
         old_total = len(list_ids)

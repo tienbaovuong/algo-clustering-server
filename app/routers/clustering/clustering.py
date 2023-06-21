@@ -20,7 +20,7 @@ async def init_clustering(
     filter_data = data.filter
     created_at = None
     if filter_data.created_at:
-        created_at = datetime.strptime(filter_data.created_at)
+        created_at = datetime.strptime(filter_data.created_at, '%Y-%m-%dT%H:%M:%SZ')
     thesis_list, total = await ThesisDataService().list_thesis(
         title=filter_data.title,
         semester=filter_data.semester,

@@ -20,7 +20,7 @@ async def get_list_thesis_data(
     limit: int = Query(10),
 ):
     if created_at:
-        created_at = datetime.strptime(created_at)
+        created_at = datetime.strptime(created_at, '%Y-%m-%dT%H:%M:%SZ')
     items, total = await ThesisDataService().list_thesis(
         title=title,
         semester=semester,
