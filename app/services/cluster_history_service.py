@@ -42,7 +42,7 @@ class ClusterHistoryService:
             query.append(RegEx(ClusterHistory.name, name, options="i"))
         query_task = ClusterHistory.find_many(*query)
         total = await query_task.count()
-        cluster_history_list = await query_task.skip(skip).limit(limit).project(ShortClusterHistory).to_list()
+        cluster_history_list = await query_task.skip(skip).limit(limit).sort(-ClusterHistory.id).project(ShortClusterHistory).to_list()
         return cluster_history_list, total
 
 
@@ -69,7 +69,7 @@ class ClusterHistoryService:
             clusters=[],
             non_clustered_thesis=minimum_thesis_list,
             updated_at=datetime.utcnow(),
-            cluster_job_status=ClusterJobStatus(total_done_nlp=0, total_thesis=len(minimum_thesis_list), status=JobStatusType.WAITING_NLP),
+            cluster_job_status=ClusterJobStatus(total_done_nlp=0, total_thesis=len(minimum_thesis_list), status=JobStatusType.PENDING),
             config=config
         )
         await new_history.save()
@@ -108,7 +108,10 @@ class ClusterHistoryService:
         cluster_history = await ClusterHistory.find_one({'_id': PydanticObjectId(history_id)})
         if not cluster_history:
             raise NotFoundException("No cluster history")
-        await cluster_history.update(Set(ClusterHistory.cluster_job_status.status, status))
+        update_data = {
+            "cluster_job_status.status": status
+        }
+        await cluster_history.update({"$set": update_data})
 
 
     async def update_result(

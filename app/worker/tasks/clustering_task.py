@@ -23,6 +23,7 @@ def schedule_clustering(history_id) -> str:
 def cluster_thesis(history_id: str):
     logger.info(backend.base_url)
     try:
+        update_history_data(history_id=history_id, status="WAITING_NLP")
         while(True):
             try:
                 history_data = backend.get(
@@ -35,9 +36,9 @@ def cluster_thesis(history_id: str):
                 if parse_data.get("ready_for_cluster"):
                     break
                 else:
-                    time.sleep(5.0)
+                    time.sleep(2.0)
             except HTTPStatusError as error:
-                time.sleep(5.0)
+                time.sleep(2.0)
                 continue
 
         result_data = []

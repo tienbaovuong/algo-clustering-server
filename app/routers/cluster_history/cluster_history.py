@@ -9,7 +9,7 @@ route = APIRouter(tags=['Cluster History'], prefix="/cluster_history")
 
 @route.get(
     '/list',
-    response_model=ClusterHistoryPaginationData
+    response_model=ClusterHistoryPaginationResponse
 )
 async def get_list_cluster_history(
     name: str = Query(None),

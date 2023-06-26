@@ -30,7 +30,7 @@ class ThesisDataService:
             limit = None
         query_task = ThesisData.find_many(*query)
         total = await query_task.count()
-        thesis_data_list = await query_task.skip(skip).limit(limit).project(ShortThesisData).to_list()
+        thesis_data_list = await query_task.skip(skip).limit(limit).sort(-ThesisData.id).project(ShortThesisData).to_list()
         return thesis_data_list, total
 
     async def get(

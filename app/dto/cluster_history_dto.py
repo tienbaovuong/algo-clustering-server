@@ -5,7 +5,7 @@ from datetime import datetime
 from app.dto.common import (
     BasePaginationResponseData, BaseResponseData, BeanieDocumentWithId
 )
-from app.models.cluster_history import ClusterGroupData, ClusterJobStatus, MinimumThesisData, ClusterConfig
+from app.models.cluster_history import ClusterGroupData, ClusterJobStatus, MinimumThesisData, ClusterConfig, JobStatusType
 from app.models.thesis_data import ThesisData
 
 
@@ -59,4 +59,4 @@ class ClusterHistoryResultPutRequest(BaseModel):
 
 
 class ClusterHistoryStatusPutRequest(BaseModel):
-    status: ClusterJobStatus
+    status: JobStatusType

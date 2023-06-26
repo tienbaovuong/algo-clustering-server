@@ -20,6 +20,7 @@ class ClusterGroupData(BaseModel):
 
 class JobStatusType(str, RootEnum):
     FAILED = "FAILED"
+    PENDING = "PENDING"
     WAITING_NLP = "WAITING NLP"
     CLUSTERING = "CLUSTERING"
     FINISHED = "FINISHED"
