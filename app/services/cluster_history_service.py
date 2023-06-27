@@ -86,8 +86,8 @@ class ClusterHistoryService:
         cluster_history = await ClusterHistory.find_one({'_id': PydanticObjectId(cluster_history_id)})
         if not cluster_history:
             raise NotFoundException("No cluster history")
-        await cluster_history.update(**new_cluster_history.dict())
-        return cluster_history
+        await cluster_history.update({"$set": new_cluster_history.dict()})
+        return FullClusterHistory(**cluster_history.dict(), _id=cluster_history_id)
 
 
     async def delete(
