@@ -44,7 +44,8 @@ class ClusteringAlgorithm:
             th_loop += 1
         for idx, membership in enumerate(self.membership):
             sorted_membership = sorted(membership, key=float, reverse=True)
-            for id_cluster in sorted_membership:
+            for data in sorted_membership:
+                id_cluster = membership.index(data)
                 if len(self.pred_labels[id_cluster]) < self.max_size_cluster:
                     self.pred_labels[id_cluster].append(idx)
                     break
@@ -130,7 +131,7 @@ class ClusteringAlgorithm:
                                 self.membership[id_point][id_centroid],
                                 self.fuzzi_m,
                             )
-                            * self.__calculate_point_distance(point, centroid)
+                            * self._calculate_point_distance(point, centroid)
                             for id_centroid, centroid in enumerate(self.centroid)
                         ]
                     )

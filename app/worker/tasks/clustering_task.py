@@ -6,8 +6,12 @@ from httpx import HTTPStatusError
 
 from app.worker.handler import celery
 from app.worker.adapters import backend
+from app.worker.thesis_cluster_class import ThesisClusterObject, ThesisClusterService
+from app.helpers.cluster.clustering_helper import ClusteringAlgorithm
+
 
 logger = get_task_logger(__name__)
+field_weights = [8, 4, 2, 1]
 
 
 def schedule_clustering(history_id) -> str:
@@ -41,24 +45,34 @@ def cluster_thesis(history_id: str):
                 time.sleep(2.0)
                 continue
 
-        result_data = []
+        config = parse_data.get("config")
         thesis_list = parse_data.get("non_clustered_thesis")
-        min_size = math.floor(len(thesis_list) / 3)
-        cluster_1 = {
-            "name": "Cluster 1",
-            "children": thesis_list[:min_size]
-        }
-        cluster_2 = {
-            "name": "Cluster 2",
-            "children": thesis_list[min_size : min_size * 2]
-        }
-        cluster_3 = {
-            "name": "Cluster 3",
-            "children": thesis_list[min_size * 2:]
-        }
-        result_data.append(cluster_1)
-        result_data.append(cluster_2)
-        result_data.append(cluster_3)
+        detail_thesis_dict = parse_data.get("detail_thesis_dict")
+
+        service = ThesisClusterService(
+            field_weights=get_field_weights(config.get("order")),
+            field_balance_multipliers=get_field_balance(detail_thesis_dict)
+        )
+        algo_instance = ClusteringAlgorithm(
+            dataset=get_data_sets(thesis_list, detail_thesis_dict),
+            model=service,
+            n_clusters=config.get("number_of_clusters"),
+            max_size_cluster=config.get("max_item_each_cluster")
+        )
+        result_label, loss_values = algo_instance.clustering()
+        result_data = []
+        for result in result_label:
+            if len(result) == 0:
+                continue
+            children = []
+            for item in result:
+                children.append(thesis_list[item])
+            new_cluster = {
+                "name": "cluster name",
+                "children": children
+            }
+            result_data.append(new_cluster)
+
         res = backend.put(
             f"/internal_api/v1/cluster_history/{history_id}/cluster_result",
             json={
@@ -79,3 +93,31 @@ def update_history_data(history_id: str, status: str):
             "status": status
         }
     )
+
+def get_field_weights(input: list):
+    result = []
+    for i in input:
+        result.append(field_weights[i])
+    return result
+
+def get_field_balance(input: list):
+    title_balance = 1
+    category_balance = 1
+    expected_balance = 1
+    problem_balance = 1
+
+    return [title_balance, category_balance, expected_balance, problem_balance]
+
+def get_data_sets(input_list: list, input_dict: dict):
+    result = []
+    for item in input_list:
+        thesis_id = item.get("thesis_id")
+        related_thesis = input_dict.get(thesis_id)
+        data = ThesisClusterObject(
+            title_vector=related_thesis.get("title_vector"),
+            category_vector=related_thesis.get("category_vector"),
+            expected_result_vector=related_thesis.get("expected_result_vector"),
+            problem_solve_vector=related_thesis.get("problem_solve_vector")
+        )
+        result.append(data)
+    return result

@@ -17,13 +17,13 @@ def multiply_array(input: list, multiplier: float):
 
 def get_medium_array(input: list):
     total = len(input)
-    result = [0] * total
+    result = np.zeros_like(input[0])
 
     for item in input:
-        result += item
+        result += np.array(item)
     
     result /= total
-    return result
+    return result.tolist()
 
 
 class ThesisClusterService(ClusterService):
@@ -32,10 +32,10 @@ class ThesisClusterService(ClusterService):
         self.field_balance_multipliers = field_balance_multipliers
 
     def get_distance_between_two_object(self, first_object: ThesisClusterObject, second_object: ThesisClusterObject) -> float:
-        dis1 = np.linalg.norm(first_object.title_vector - second_object.title_vector) * self.field_weights[0] * self.field_balance_multipliers[0]
-        dis2 = np.linalg.norm(first_object.category_vector - second_object.category_vector) * self.field_weights[1] * self.field_balance_multipliers[1]
-        dis3 = np.linalg.norm(first_object.expected_result_vector - second_object.expected_result_vector) * self.field_weights[2] * self.field_balance_multipliers[2]
-        dis4 = np.linalg.norm(first_object.problem_solve_vector - second_object.problem_solve_vector) * self.field_weights[3] * self.field_balance_multipliers[3]
+        dis1 = np.linalg.norm(np.array(first_object.title_vector) - np.array(second_object.title_vector)) * self.field_weights[0] * self.field_balance_multipliers[0]
+        dis2 = np.linalg.norm(np.array(first_object.category_vector) - np.array(second_object.category_vector)) * self.field_weights[1] * self.field_balance_multipliers[1]
+        dis3 = np.linalg.norm(np.array(first_object.expected_result_vector) - np.array(second_object.expected_result_vector)) * self.field_weights[2] * self.field_balance_multipliers[2]
+        dis4 = np.linalg.norm(np.array(first_object.problem_solve_vector) - np.array(second_object.problem_solve_vector)) * self.field_weights[3] * self.field_balance_multipliers[3]
         return dis1 + dis2 + dis3 + dis4
     
     def calculate_centroid_from_list_and_uik(self, uik_pow: list, data: List[ThesisClusterObject]) -> ThesisClusterObject:
