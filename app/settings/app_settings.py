@@ -33,3 +33,11 @@ class AppSettings(BaseSettings):
     @property
     def mongo_dsn(self):
         return settings.get("MONGO_DSN")
+    
+    @property
+    def celery_broker_url(self):
+        return settings.get("CELERY_BROKER_URL")
+    
+    @property
+    def celery_result_backend(self):
+        return settings.get("CELERY_RESULT_BACKEND")

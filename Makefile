@@ -9,3 +9,6 @@ start:
 
 start-reload:
 	python main-hotload.py
+
+handler: app/worker
+	celery -A app.worker.handler worker -l INFO -O fair -Q celery,nlp,clustering

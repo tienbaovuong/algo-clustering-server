@@ -25,6 +25,7 @@ class FullThesisData(ShortThesisData):
     expected_result: str
     problem_solve: str
     created_at: datetime
+    updated_at: datetime
 
 
 class ThesisDataResponse(BaseResponseData):
@@ -47,3 +48,10 @@ class ThesisDataCreateRequest(BaseModel):
     expected_result: str
     problem_solve: str
     student_data: ThesisStudentData
+
+
+class ThesisDataUpdateNlpRequest(BaseModel):
+    title_vector: list
+    category_vector: list
+    expected_result_vector: list
+    problem_solve_vector: list

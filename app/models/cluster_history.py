@@ -2,7 +2,7 @@ from typing import Optional, List
 from datetime import datetime
 from pydantic import BaseModel
 
-from app.models.base import RootModel
+from app.models.base import RootModel, RootEnum
 
 
 class MinimumThesisData(BaseModel):
@@ -18,11 +18,34 @@ class ClusterGroupData(BaseModel):
     children: List[MinimumThesisData]
 
 
+class JobStatusType(str, RootEnum):
+    FAILED = "FAILED"
+    PENDING = "PENDING"
+    WAITING_NLP = "WAITING NLP"
+    CLUSTERING = "CLUSTERING"
+    FINISHED = "FINISHED"
+
+
+class ClusterJobStatus(BaseModel):
+    total_done_nlp: int
+    total_thesis: int
+    status: JobStatusType
+
+
+class ClusterConfig(BaseModel):
+    order: list = [0, 1, 2, 3]
+    number_of_clusters: int = 10
+    max_item_each_cluster: int = 10
+
+
 class ClusterHistory(RootModel):
     class Collection:
         name = "cluster_history"
 
     name: str
     description: Optional[str]
-    children: List[ClusterGroupData]
+    clusters: List[ClusterGroupData]
+    non_clustered_thesis: List[MinimumThesisData]
     updated_at: datetime
+    cluster_job_status: ClusterJobStatus
+    config: ClusterConfig

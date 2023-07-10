@@ -1,0 +1,1136 @@
+[
+    {
+        "semester": "20221",
+        "title": "Đồ án tiếng việt",
+        "category": "Học máy, công nghệ phần mềm",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Vương Tiến Bảo",
+          "student_id": "20193991"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Phát triển hệ thống giám sát tình trạng can thiệp tín hiệu vệ tinh GNSS thời gian thực",
+        "category": "AIoT và Mạng Máy tính",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Nguyễn Trọng Hải",
+          "student_id": "20183730"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Hệ thống khóa cửa thông minh điều khiển qua điện thoại",
+        "category": "AIoT và Mạng Máy tính",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Trần Tuấn Anh",
+          "student_id": "20183690"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Xây dựng ứng dụng điều khiển đa năng",
+        "category": "AIoT và Mạng Máy tính",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Trần Đình Đức",
+          "student_id": "20173022"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Nhận dạng cử chỉ tay bằng camera nhiệt và ứng dụng trong điều khiển hệ thống giải trí trên xe ô tô",
+        "category": "AIoT và Mạng Máy tính",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Võ Việt Dũng",
+          "student_id": "20183723"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Xây dựng hệ thống nhà thông minh",
+        "category": "AIoT và Mạng Máy tính",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Nguyễn Trường Giang",
+          "student_id": "20173078"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Nghiên cứu và phát triển cơ chế định tuyến hướng dịch vụ cho hệ thống mạng SDN phân tán và không đồng nhất",
+        "category": "AIoT và Mạng Máy tính",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Ngọ Việt Hoàng",
+          "student_id": "20183748"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Phần mềm quản lý, đánh giá an toàn cho ứng dụng web theo chuẩn ISO/IEC",
+        "category": "An toàn không gian số ",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Hoàng Thị Lương",
+          "student_id": "20175980"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Xây dựng module phân loại dữ liệu, gợi ý, tìm kiếm và bảo mật trong hệ thống học và thi online worksheetzone",
+        "category": "An toàn không gian số ",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Lê Đăng Hoàng Đạt",
+          "student_id": "20183882"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Xây dựng Website ứng dụng tài chính cho NFT của Blockchain",
+        "category": "An toàn không gian số ",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Nguyễn Tiến Dũng",
+          "student_id": "20183721"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Ứng dụng sàn thương mại điện tử sử dụng công nghệ Blockchain",
+        "category": "An toàn không gian số ",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Phạm Văn Chung",
+          "student_id": "20172983"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Đề xuất mô hình kết hợp mới cho bài toán phát hiện xâm nhập mạng",
+        "category": "An toàn không gian số ",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Luyện Công Anh",
+          "student_id": "20172938"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Nghiên cứu và khai thác một số lỗ hổng bảo mật của thiết bị IoT",
+        "category": "An toàn không gian số ",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Vũ Thị Lan",
+          "student_id": "20183781"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Nghiên cứu và phân tích lỗ hổng leo quyền trong hệ điều hành Windows",
+        "category": "An toàn không gian số ",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Nguyễn Phương Nam",
+          "student_id": "20183805"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Thiết kế và triển khai hệ tthống website bán hàng thời trang online",
+        "category": "E-commerce",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Nguyễn Chí Trung Kiên",
+          "student_id": "20175977"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Hệ thống quản lý giao hàng đồ ăn trên nền tảng website",
+        "category": "E-commerce",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Vũ Thế Khoa",
+          "student_id": "20176247"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Xây dựng website quản lý bán hàng cho công ty TNHH gas Đệ Vân",
+        "category": "E-commerce",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Nguyễn Kỳ Thông",
+          "student_id": "20168807"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "xây dưng trang web quản lý bán hàng chuỗi cửa hàng cà phê",
+        "category": "E-commerce",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Nguyễn Sĩ Vũ",
+          "student_id": "20173469"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "WEbsite bán hàng cho cửa hàng quần áo nam nhiều chi nhánh",
+        "category": "E-commerce",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Nguyễn Văn Diện",
+          "student_id": "20183707"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Hệ thống cho thuê và quản lý phòng trọ",
+        "category": "E-commerce",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Mai Ngọc Tùng Sơn",
+          "student_id": "20173350"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Xây dựng website bán hàng",
+        "category": "E-commerce",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Hoàng Tô Hiệu",
+          "student_id": "20176090"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Xây dựng Platform ứng dụng iOS ôn thi trắc nghiệm",
+        "category": "EdTech",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Dương Hồng Tuấn",
+          "student_id": "20173439"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Xây dựng ứng dụng hỗ trợ bài tập và thi Worksheetzone trên nền tảng web",
+        "category": "EdTech",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Nguyễn Thị Nhung",
+          "student_id": "20175985"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Xây dựng ứng dụng tạo đề thi trực quan trên nền tảng web",
+        "category": "EdTech",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Đặng Xuân Hưng",
+          "student_id": "20176028"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Website trắc nghiệm quy chế đào tạo đại học cho sinh viên Bách Khoa",
+        "category": "EdTech",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Đỗ Văn Thành",
+          "student_id": "20173378"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Phát triển ứng dụng web quản lý việc dạy và học dựa trên tương tác học liệu",
+        "category": "EdTech",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Ngô Văn Giang",
+          "student_id": "20183912"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Xây dựng hệ thống hỗ trợ dạy và học thông minh",
+        "category": "EdTech",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Bùi Xuân Dương",
+          "student_id": "20183901"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Hệ thống thi trắc nghiệm trực tuyến",
+        "category": "EdTech",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Phạm Tuấn Sơn",
+          "student_id": "20183622"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Hệ thống quản lý thi trắc nghiệm online",
+        "category": "EdTech",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Trần Quốc Anh",
+          "student_id": "20172962"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Mạng xã hội hỗ trợ hệ thống quản lý học tập",
+        "category": "EdTech",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Tô Viết Khánh",
+          "student_id": "20183933"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Website học trực tuyến Learn With Me",
+        "category": "EdTech",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Nguyễn Anh Dũng",
+          "student_id": "20176729"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Nghiên cứu và cải thiện mô hình Denoising Diffusion cho sinh ảnh",
+        "category": "Học Máy",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Vũ Long Giang",
+          "student_id": "20183519"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Nghiên cứu và triển khai cơ chế co giãn tự động cho hệ thống theo kiến trúc Microservices dựa trên dự đoán số lượng yêu cầu người dùng sử dụng kỹ thuật LSTM",
+        "category": "Học Máy",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Phạm Minh Hiệp",
+          "student_id": "20183738"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Xây dựng công cụ hỗ trợ đánh nhãn tiếng nói sử dụng trí tuệ nhân tạo",
+        "category": "Học Máy",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Trần Đức Lương",
+          "student_id": "20176098"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Xây dựng mô hình dự đoán subscription",
+        "category": "Học Máy",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Hoàng Công Tuệ",
+          "student_id": "20173448"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Ứng dụng kỹ thuật phân rã ma trận trong xây dựng hệ thống gợi ý sách bán trực tuyến",
+        "category": "Học Máy",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Võ Hồng Sang",
+          "student_id": "20183973"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Học liên tục với bài toán xác định sự kiện theo sinh biểu diễn và tối ưu đa mục tiêu",
+        "category": "Học Máy",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Đặng Quang Huy",
+          "student_id": "20183551"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Học liên tục cho mô hình chủ đề",
+        "category": "Học Máy",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Nguyễn Quỳnh Lộc",
+          "student_id": "20173238"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Hệ thống  thu  thập, lưu  trữ, xử  lý,  phân  tích  và  trực  quan  hóa  dữ liệu  trên  sàn  giao dịch  TMĐT",
+        "category": "Phân tích dữ liệu lớn và ứng dụng",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Vũ Xuân Khánh",
+          "student_id": "20183565"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Xây dựng hệ thống tìm kiếm và khai thác thông tin từ dữ liệu Facebook",
+        "category": "Phân tích dữ liệu lớn và ứng dụng",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Hồ Mạnh Thắng",
+          "student_id": "20183627"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Hệ thống tích hợp dữ liệu và ứng dụng so sánh giá sản phẩm Apple",
+        "category": "Phân tích dữ liệu lớn và ứng dụng",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Nguyễn Đình Thắng",
+          "student_id": "20183628"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Phân tích ý kiến theo khía cạnh từ dữ liệu phản hồi của khách hàng",
+        "category": "Phân tích dữ liệu lớn và ứng dụng",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Lê Thành Trung",
+          "student_id": "20194192"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Nền tảng dữ liệu chứng khoán Việt Nam - Phân hệ quản lý và lập lịch trình tính toán chỉ báo",
+        "category": "Phân tích dữ liệu lớn và ứng dụng",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Mai Trường Sơn",
+          "student_id": "20183620"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Nền tảng dữ liệu chứng khoán - Phân hệ ứng dụng, quản lý hệ thống",
+        "category": "Phân tích dữ liệu lớn và ứng dụng",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Đào Tùng Dương",
+          "student_id": "20183509"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Nền tảng dữ liệu chứng khoán - Phân hệ hạ tầng triển khai Kubernetes",
+        "category": "Phân tích dữ liệu lớn và ứng dụng",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Nguyễn Hoàng Anh Tuấn",
+          "student_id": "20183655"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Nền tảng dữ liệu chứng khoán - Phân hệ thu thập, tổ chức lưu trữ và cảnh báo chứng khoán",
+        "category": "Phân tích dữ liệu lớn và ứng dụng",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Đỗ Văn Tú",
+          "student_id": "20183848"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Xây dựng hệ thống tổng hợp và phân tích doanh thu phim điện ảnh",
+        "category": "Phân tích dữ liệu lớn và ứng dụng",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Vũ Thị Ngọc Lan",
+          "student_id": "20183939"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Dự báo khách hàng rời bỏ dịch vụ",
+        "category": "Phân tích dữ liệu lớn và ứng dụng",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Đỗ Tiến Đạt",
+          "student_id": "20183881"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Mô hình BERT đối với bài toán đọc hiểu tiếng Việt",
+        "category": "Xử lý ngôn ngữ tự nhiên",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Lê Hoàng Thái",
+          "student_id": "20183983"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Tóm tắt văn bản tóm lược sử dụng PEGASUS kết hợp Longformer",
+        "category": "Xử lý ngôn ngữ tự nhiên",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Nguyễn Trung Đức",
+          "student_id": "20183501"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Trích xuất sự kiện trong văn bản tiếng Việt",
+        "category": "Xử lý ngôn ngữ tự nhiên",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Trần Quang Minh",
+          "student_id": "20183594"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Cải thiện độ chính xác của hệ thống dịch máy cho cặp ngôn ngữ Việt - Khmer dựa trên tăng cường dữ liệu",
+        "category": "Xử lý ngôn ngữ tự nhiên",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Nguyễn Văn Duy",
+          "student_id": "20183514"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Xây dựng chiến lược lọc nhiễu để cải thiện hệ thống dịch máy Trung-Việt có giám sát",
+        "category": "Xử lý ngôn ngữ tự nhiên",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Nguyễn Hoàng Nam",
+          "student_id": "20183596"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    },
+    {
+        "semester": "20221",
+        "title": "Ứng dụng học sâu trong phân tách giọng nói",
+        "category": "Xử lý ngôn ngữ tự nhiên",
+        "expected_result": "Không có",
+        "problem_solve": "Không có",
+        "student_data": {
+          "student_name": "Lê Đình Hiếu",
+          "student_id": "20183530"
+        },
+        "created_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        },
+        "updated_at": {
+          "$date": {
+            "$numberLong": "1686123304428"
+          }
+        }
+    }
+]

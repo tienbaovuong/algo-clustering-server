@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from fastapi import APIRouter, Query
 from app.dto.common import (BaseResponse, BaseResponseData)
 from app.dto.thesis_data_dto import (ThesisDataResponse, ThesisDataPaginationResponse, ThesisDataPaginationData, ThesisDataCreateRequest)
@@ -17,7 +19,9 @@ async def get_list_thesis_data(
     page: int = Query(1),
     limit: int = Query(10),
 ):
-    items, total = await ThesisDataService().list(
+    if created_at:
+        created_at = datetime.strptime(created_at, '%Y-%m-%dT%H:%M:%SZ')
+    items, total = await ThesisDataService().list_thesis(
         title=title,
         semester=semester,
         created_at=created_at,

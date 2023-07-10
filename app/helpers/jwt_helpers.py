@@ -1,9 +1,7 @@
 import os
 import jwt
 
-
-class PermissionDeniedException(Exception):
-    pass
+from app.helpers.exceptions import PermissionDeniedException
 
 
 default_secret_key = os.getenv('JWT_SECRET_KEY')

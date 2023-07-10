@@ -1,3 +1,4 @@
+from datetime import datetime
 from typing import Optional, List
 from pydantic import BaseModel
 from pymongo import ASCENDING, IndexModel
@@ -35,4 +36,6 @@ class ThesisData(RootModel, ThesisDataInput):
             )
         ]
 
+    updated_at: datetime
     need_nlp_extract: bool = True
+    nlp_job_id: Optional[str]
