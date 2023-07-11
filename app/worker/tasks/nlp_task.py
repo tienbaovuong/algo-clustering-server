@@ -25,7 +25,7 @@ def schedule_preprocess(thesis: Dict) -> str:
 
 
 @celery.task(
-    rate_limit="50/s",
+    rate_limit="10/m",
     time_limit=120
 )
 def preprocess_thesis(thesis: Dict):

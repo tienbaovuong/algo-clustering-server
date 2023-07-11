@@ -10,6 +10,6 @@ COPY ./config /dir/config
 COPY ./main.py /dir/main.py
 COPY ./Makefile /dir/Makefile
 
-EXPOSE 8001
+EXPOSE 80
 
 CMD ["make", "start"]
