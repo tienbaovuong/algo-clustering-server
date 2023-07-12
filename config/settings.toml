@@ -1,5 +1,5 @@
 [default]
-ALLOWED_ORIGINS = ["http://localhost:5173", "https://thesis-cluster.netlify.app/"]
+ALLOWED_ORIGINS = ["http://localhost:5173", "https://thesis-cluster.netlify.app"]
 API_URL = "http://clustering:80"
 CELERY_BROKER_URL = "redis://redis:6379/0"
 CELERY_RESULT_BACKEND = "redis://redis:6379/0"
