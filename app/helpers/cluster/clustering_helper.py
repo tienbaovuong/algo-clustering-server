@@ -42,15 +42,16 @@ class ClusteringAlgorithm:
             self._update_centroid()
             self._calculate_loss_function()
             th_loop += 1
-        for idx, membership in enumerate(self.membership):
-            sorted_membership = sorted(membership, key=float, reverse=True)
-            for data in sorted_membership:
-                id_cluster = membership.index(data)
-                if len(self.pred_labels[id_cluster]) < self.max_size_cluster:
-                    self.pred_labels[id_cluster].append(idx)
-                    break
+            self.pred_labels = [[] for _ in range(self.n_clusters)]
+            for idx, membership in enumerate(self.membership):
+                sorted_membership = sorted(membership, key=float, reverse=True)
+                for data in sorted_membership:
+                    id_cluster = membership.index(data)
+                    if len(self.pred_labels[id_cluster]) < self.max_size_cluster:
+                        self.pred_labels[id_cluster].append(idx)
+                        break
 
-        return self.pred_labels, self.loss_values
+            yield self.pred_labels, self.loss_values
 
     def _generate_centroid(self):
         exclude_list = []

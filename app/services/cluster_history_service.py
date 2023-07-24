@@ -10,8 +10,7 @@ from app.dto.thesis_data_dto import ShortThesisData
 from app.dto.cluster_history_dto import ClusterHistoryPutRequest, ShortClusterHistory, FullClusterHistory, \
     WorkerClusterHistory, ClusterHistoryResultPutRequest
 from app.models.cluster_history import ClusterHistory, MinimumThesisData, ClusterJobStatus, JobStatusType, \
-    ClusterConfig, ClusterGroupData
-from app.models.thesis_data import ThesisData
+    ClusterConfig, ClusterGroupData, ClusterPartialResult
 from app.services.thesis_data_service import ThesisDataService
 from app.worker.tasks.nlp_task import schedule_preprocess
 from app.worker.tasks.clustering_task import schedule_clustering
@@ -68,6 +67,7 @@ class ClusterHistoryService:
             name="New cluster history",
             clusters=[],
             non_clustered_thesis=minimum_thesis_list,
+            loss_values=[],
             updated_at=datetime.utcnow(),
             cluster_job_status=ClusterJobStatus(total_done_nlp=0, total_thesis=len(minimum_thesis_list), status=JobStatusType.PENDING),
             config=config
@@ -124,23 +124,24 @@ class ClusterHistoryService:
             raise NotFoundException("No cluster history")
         
         update_data = {
-            "cluster_job_status.status": JobStatusType.FINISHED
+            "loss_values": data.loss_values
         }
 
         cluster_list: List[ClusterGroupData] = []
         for cluster in data.cluster_result:
             list_ids = []
-            thesis_list: List[MinimumThesisData] = []
-            for thesis in cluster.get("children"):
-                list_ids.append(thesis.get("thesis_id"))
-                thesis_list.append(MinimumThesisData(**thesis))
+            thesis_list: List[int] = []
+            for index in cluster.get("children"):
+                list_ids.append(cluster_history.non_clustered_thesis[index].thesis_id)
+                thesis_list.append(index)
             suggest_name = (await ThesisDataService().suggest_cluster_name(list_ids))[0]
             parse_cluster = ClusterGroupData(
                 name=suggest_name,
                 children=thesis_list
             )
             cluster_list.append(parse_cluster)
-        update_data["clusters"] = cluster_list
+        cluster_history.clusters.append(ClusterPartialResult(result_cluster=cluster_list))
+        update_data["clusters"] = cluster_history.clusters
 
         await cluster_history.update({"$set": update_data})
 

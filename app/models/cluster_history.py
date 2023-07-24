@@ -15,7 +15,12 @@ class MinimumThesisData(BaseModel):
 class ClusterGroupData(BaseModel):
     name: str
     description: Optional[str]
-    children: List[MinimumThesisData]
+    children: List[int]
+
+
+class ClusterPartialResult(BaseModel):
+    # Cluster result for a certain loop, last partial result is the final
+    result_cluster: List[ClusterGroupData]
 
 
 class JobStatusType(str, RootEnum):
@@ -44,7 +49,8 @@ class ClusterHistory(RootModel):
 
     name: str
     description: Optional[str]
-    clusters: List[ClusterGroupData]
+    clusters: List[ClusterPartialResult]
+    loss_values: List[float]
     non_clustered_thesis: List[MinimumThesisData]
     updated_at: datetime
     cluster_job_status: ClusterJobStatus

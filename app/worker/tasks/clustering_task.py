@@ -22,7 +22,7 @@ def schedule_clustering(history_id) -> str:
 
 @celery.task(
     rate_limit="1/m",
-    time_limit=600,
+    time_limit=1200,
 )
 def cluster_thesis(history_id: str):
     logger.info(backend.base_url)
@@ -59,27 +59,33 @@ def cluster_thesis(history_id: str):
             n_clusters=config.get("number_of_clusters"),
             max_size_cluster=config.get("max_item_each_cluster")
         )
-        result_label, loss_values = algo_instance.clustering()
-        result_data = []
-        for result in result_label:
-            if len(result) == 0:
-                continue
-            children = []
-            for item in result:
-                children.append(thesis_list[item])
-            new_cluster = {
-                "name": "cluster name",
-                "children": children
-            }
-            result_data.append(new_cluster)
 
-        res = backend.put(
-            f"/internal_api/v1/cluster_history/{history_id}/cluster_result",
-            json={
-                "cluster_result": result_data
-            }
-        )
-        res.raise_for_status()
+        # Cluster loop
+        for result_label, loss_values in algo_instance.clustering():
+            result_data = []
+            for index, result in enumerate(result_label):
+                if len(result) == 0:
+                    continue
+                children = []
+                for item in result:
+                    children.append(item)
+                new_cluster = {
+                    "name": f"Cluster {index + 1}",
+                    "children": children
+                }
+                result_data.append(new_cluster)
+
+            res = backend.put(
+                f"/internal_api/v1/cluster_history/{history_id}/cluster_result",
+                json={
+                    "cluster_result": result_data,
+                    "loss_values": loss_values
+                }
+            )
+            res.raise_for_status()
+            time.sleep(1)
+
+        update_history_data(history_id=history_id, status="FINISHED")
         logger.info("Finish cluster, ref_id: %s" % history_id)
     except Exception as error:
         logger.exception(error)

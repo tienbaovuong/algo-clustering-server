@@ -5,7 +5,7 @@ from datetime import datetime
 from app.dto.common import (
     BasePaginationResponseData, BaseResponseData, BeanieDocumentWithId
 )
-from app.models.cluster_history import ClusterGroupData, ClusterJobStatus, MinimumThesisData, ClusterConfig, JobStatusType
+from app.models.cluster_history import ClusterPartialResult, ClusterJobStatus, MinimumThesisData, ClusterConfig, JobStatusType
 from app.models.thesis_data import ThesisData
 
 
@@ -20,8 +20,9 @@ class ShortClusterHistory(BeanieDocumentWithId):
 
 # DTO for detail response
 class FullClusterHistory(ShortClusterHistory):
-    clusters: List[ClusterGroupData]
+    clusters: List[ClusterPartialResult]
     non_clustered_thesis: List[MinimumThesisData]
+    loss_values: List[float]
     config: ClusterConfig
 
 
@@ -51,11 +52,12 @@ class ClusterHistoryPaginationResponse(BaseResponseData):
 class ClusterHistoryPutRequest(BaseModel):
     name: Optional[str]
     description: Optional[str]
-    clusters: Optional[List[ClusterGroupData]]
+    clusters: Optional[List[ClusterPartialResult]]
 
 
 class ClusterHistoryResultPutRequest(BaseModel):
     cluster_result: List[dict]
+    loss_values: List[float]
 
 
 class ClusterHistoryStatusPutRequest(BaseModel):
