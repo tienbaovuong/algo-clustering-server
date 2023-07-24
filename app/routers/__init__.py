@@ -1,4 +1,5 @@
 from .health import ping
+from .auth import auth_routes
 from .clustering import clustering_routes
 from .cluster_history import cluster_history_routes, internal_cluster_history_routes
 from .thesis_data import thesis_data_routes, internal_thesis_data_routes
@@ -20,6 +21,7 @@ routers = []
 routers.append({
     'router': ping.router
 })
+add_routes(auth_routes, routers, [], False)
 add_routes(clustering_routes, routers, [], False)
 add_routes(cluster_history_routes, routers, [], False)
 add_routes(thesis_data_routes, routers, [], False)

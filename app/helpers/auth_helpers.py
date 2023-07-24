@@ -1,12 +1,17 @@
 import os
 import jwt
+import time
+
+from fastapi import Depends
+from fastapi.security import OAuth2PasswordBearer
 
 from app.helpers.exceptions import PermissionDeniedException
 
 
 default_secret_key = os.getenv('JWT_SECRET_KEY')
 default_algorithm = os.getenv('JWT_ALGORITHM')
-
+default_user = os.getenv('USERNAME')
+default_password = os.getenv('PASSWORD')
 
 def generate_token(
     payload=None, secret_key=default_secret_key,
@@ -39,3 +44,25 @@ def decode_token(
         )
     except jwt.InvalidTokenError:
         raise PermissionDeniedException('Invalid token. Please log in again.')
+    
+def login(username: str, password: str):
+    if (username == default_user and password == default_password):
+        payload = {
+            "sub": "admin",
+            "exp": round(time.time()) + 86400, # 1 hour expire
+        }
+        return generate_token(payload, default_secret_key)
+    else:
+        raise PermissionDeniedException(
+            'Wrong username or password'
+        )
+
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
+    
+def get_current_user(token: str= Depends(oauth2_scheme)):
+    user = decode_token(token)
+    if not user:
+        raise PermissionDeniedException(
+            'Signature expired. Please log in again.'
+        )
+    return user.get("sub")

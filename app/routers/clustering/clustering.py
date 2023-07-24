@@ -1,5 +1,6 @@
 from datetime import datetime
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
+from app.helpers.auth_helpers import get_current_user
 from app.dto.clustering_dto import (ClusterHistoryCreateResponse, ClusterHistoryCreateRequest,
     ClusterNameSuggestionRequest, ClusterNameSuggestionResponse)
 from app.dto.cluster_history_dto import ShortClusterHistory
@@ -15,7 +16,8 @@ route = APIRouter(tags=['Clustering'], prefix="/clustering")
     response_model=ClusterHistoryCreateResponse
 )
 async def init_clustering(
-    data: ClusterHistoryCreateRequest
+    data: ClusterHistoryCreateRequest,
+    user: str = Depends(get_current_user),
 ):
     filter_data = data.filter
     created_at = None
@@ -47,7 +49,8 @@ async def init_clustering(
     response_model=ClusterNameSuggestionResponse
 )
 async def get_cluster_name_suggestion(
-    data: ClusterNameSuggestionRequest
+    data: ClusterNameSuggestionRequest,
+    user: str = Depends(get_current_user),
 ):
     suggestions = await ThesisDataService().suggest_cluster_name(data.thesis_list_id)
     return ClusterNameSuggestionResponse(

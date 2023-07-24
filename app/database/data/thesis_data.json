@@ -1,6 +1,6 @@
 [
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Đồ án tiếng việt",
         "category": "Học máy, công nghệ phần mềm",
         "expected_result": "Không có",
@@ -21,7 +21,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Phát triển hệ thống giám sát tình trạng can thiệp tín hiệu vệ tinh GNSS thời gian thực",
         "category": "AIoT và Mạng Máy tính",
         "expected_result": "Không có",
@@ -42,7 +42,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Hệ thống khóa cửa thông minh điều khiển qua điện thoại",
         "category": "AIoT và Mạng Máy tính",
         "expected_result": "Không có",
@@ -63,7 +63,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Xây dựng ứng dụng điều khiển đa năng",
         "category": "AIoT và Mạng Máy tính",
         "expected_result": "Không có",
@@ -84,7 +84,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Nhận dạng cử chỉ tay bằng camera nhiệt và ứng dụng trong điều khiển hệ thống giải trí trên xe ô tô",
         "category": "AIoT và Mạng Máy tính",
         "expected_result": "Không có",
@@ -105,7 +105,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Xây dựng hệ thống nhà thông minh",
         "category": "AIoT và Mạng Máy tính",
         "expected_result": "Không có",
@@ -126,7 +126,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Nghiên cứu và phát triển cơ chế định tuyến hướng dịch vụ cho hệ thống mạng SDN phân tán và không đồng nhất",
         "category": "AIoT và Mạng Máy tính",
         "expected_result": "Không có",
@@ -147,7 +147,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Phần mềm quản lý, đánh giá an toàn cho ứng dụng web theo chuẩn ISO/IEC",
         "category": "An toàn không gian số ",
         "expected_result": "Không có",
@@ -168,7 +168,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Xây dựng module phân loại dữ liệu, gợi ý, tìm kiếm và bảo mật trong hệ thống học và thi online worksheetzone",
         "category": "An toàn không gian số ",
         "expected_result": "Không có",
@@ -189,7 +189,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Xây dựng Website ứng dụng tài chính cho NFT của Blockchain",
         "category": "An toàn không gian số ",
         "expected_result": "Không có",
@@ -210,7 +210,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Ứng dụng sàn thương mại điện tử sử dụng công nghệ Blockchain",
         "category": "An toàn không gian số ",
         "expected_result": "Không có",
@@ -231,7 +231,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Đề xuất mô hình kết hợp mới cho bài toán phát hiện xâm nhập mạng",
         "category": "An toàn không gian số ",
         "expected_result": "Không có",
@@ -252,7 +252,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Nghiên cứu và khai thác một số lỗ hổng bảo mật của thiết bị IoT",
         "category": "An toàn không gian số ",
         "expected_result": "Không có",
@@ -273,7 +273,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Nghiên cứu và phân tích lỗ hổng leo quyền trong hệ điều hành Windows",
         "category": "An toàn không gian số ",
         "expected_result": "Không có",
@@ -294,7 +294,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Thiết kế và triển khai hệ tthống website bán hàng thời trang online",
         "category": "E-commerce",
         "expected_result": "Không có",
@@ -315,7 +315,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Hệ thống quản lý giao hàng đồ ăn trên nền tảng website",
         "category": "E-commerce",
         "expected_result": "Không có",
@@ -336,7 +336,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Xây dựng website quản lý bán hàng cho công ty TNHH gas Đệ Vân",
         "category": "E-commerce",
         "expected_result": "Không có",
@@ -357,7 +357,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "xây dưng trang web quản lý bán hàng chuỗi cửa hàng cà phê",
         "category": "E-commerce",
         "expected_result": "Không có",
@@ -378,7 +378,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "WEbsite bán hàng cho cửa hàng quần áo nam nhiều chi nhánh",
         "category": "E-commerce",
         "expected_result": "Không có",
@@ -399,7 +399,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Hệ thống cho thuê và quản lý phòng trọ",
         "category": "E-commerce",
         "expected_result": "Không có",
@@ -420,7 +420,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Xây dựng website bán hàng",
         "category": "E-commerce",
         "expected_result": "Không có",
@@ -441,7 +441,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Xây dựng Platform ứng dụng iOS ôn thi trắc nghiệm",
         "category": "EdTech",
         "expected_result": "Không có",
@@ -462,7 +462,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Xây dựng ứng dụng hỗ trợ bài tập và thi Worksheetzone trên nền tảng web",
         "category": "EdTech",
         "expected_result": "Không có",
@@ -483,7 +483,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Xây dựng ứng dụng tạo đề thi trực quan trên nền tảng web",
         "category": "EdTech",
         "expected_result": "Không có",
@@ -504,7 +504,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Website trắc nghiệm quy chế đào tạo đại học cho sinh viên Bách Khoa",
         "category": "EdTech",
         "expected_result": "Không có",
@@ -525,7 +525,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Phát triển ứng dụng web quản lý việc dạy và học dựa trên tương tác học liệu",
         "category": "EdTech",
         "expected_result": "Không có",
@@ -546,7 +546,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Xây dựng hệ thống hỗ trợ dạy và học thông minh",
         "category": "EdTech",
         "expected_result": "Không có",
@@ -567,7 +567,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Hệ thống thi trắc nghiệm trực tuyến",
         "category": "EdTech",
         "expected_result": "Không có",
@@ -588,7 +588,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Hệ thống quản lý thi trắc nghiệm online",
         "category": "EdTech",
         "expected_result": "Không có",
@@ -609,7 +609,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Mạng xã hội hỗ trợ hệ thống quản lý học tập",
         "category": "EdTech",
         "expected_result": "Không có",
@@ -630,7 +630,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Website học trực tuyến Learn With Me",
         "category": "EdTech",
         "expected_result": "Không có",
@@ -651,7 +651,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Nghiên cứu và cải thiện mô hình Denoising Diffusion cho sinh ảnh",
         "category": "Học Máy",
         "expected_result": "Không có",
@@ -672,7 +672,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Nghiên cứu và triển khai cơ chế co giãn tự động cho hệ thống theo kiến trúc Microservices dựa trên dự đoán số lượng yêu cầu người dùng sử dụng kỹ thuật LSTM",
         "category": "Học Máy",
         "expected_result": "Không có",
@@ -693,7 +693,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Xây dựng công cụ hỗ trợ đánh nhãn tiếng nói sử dụng trí tuệ nhân tạo",
         "category": "Học Máy",
         "expected_result": "Không có",
@@ -714,7 +714,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Xây dựng mô hình dự đoán subscription",
         "category": "Học Máy",
         "expected_result": "Không có",
@@ -735,7 +735,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Ứng dụng kỹ thuật phân rã ma trận trong xây dựng hệ thống gợi ý sách bán trực tuyến",
         "category": "Học Máy",
         "expected_result": "Không có",
@@ -756,7 +756,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Học liên tục với bài toán xác định sự kiện theo sinh biểu diễn và tối ưu đa mục tiêu",
         "category": "Học Máy",
         "expected_result": "Không có",
@@ -777,7 +777,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Học liên tục cho mô hình chủ đề",
         "category": "Học Máy",
         "expected_result": "Không có",
@@ -798,7 +798,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Hệ thống  thu  thập, lưu  trữ, xử  lý,  phân  tích  và  trực  quan  hóa  dữ liệu  trên  sàn  giao dịch  TMĐT",
         "category": "Phân tích dữ liệu lớn và ứng dụng",
         "expected_result": "Không có",
@@ -819,7 +819,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Xây dựng hệ thống tìm kiếm và khai thác thông tin từ dữ liệu Facebook",
         "category": "Phân tích dữ liệu lớn và ứng dụng",
         "expected_result": "Không có",
@@ -840,7 +840,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Hệ thống tích hợp dữ liệu và ứng dụng so sánh giá sản phẩm Apple",
         "category": "Phân tích dữ liệu lớn và ứng dụng",
         "expected_result": "Không có",
@@ -861,7 +861,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Phân tích ý kiến theo khía cạnh từ dữ liệu phản hồi của khách hàng",
         "category": "Phân tích dữ liệu lớn và ứng dụng",
         "expected_result": "Không có",
@@ -882,7 +882,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Nền tảng dữ liệu chứng khoán Việt Nam - Phân hệ quản lý và lập lịch trình tính toán chỉ báo",
         "category": "Phân tích dữ liệu lớn và ứng dụng",
         "expected_result": "Không có",
@@ -903,7 +903,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Nền tảng dữ liệu chứng khoán - Phân hệ ứng dụng, quản lý hệ thống",
         "category": "Phân tích dữ liệu lớn và ứng dụng",
         "expected_result": "Không có",
@@ -924,7 +924,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Nền tảng dữ liệu chứng khoán - Phân hệ hạ tầng triển khai Kubernetes",
         "category": "Phân tích dữ liệu lớn và ứng dụng",
         "expected_result": "Không có",
@@ -945,7 +945,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Nền tảng dữ liệu chứng khoán - Phân hệ thu thập, tổ chức lưu trữ và cảnh báo chứng khoán",
         "category": "Phân tích dữ liệu lớn và ứng dụng",
         "expected_result": "Không có",
@@ -966,7 +966,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Xây dựng hệ thống tổng hợp và phân tích doanh thu phim điện ảnh",
         "category": "Phân tích dữ liệu lớn và ứng dụng",
         "expected_result": "Không có",
@@ -987,7 +987,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Dự báo khách hàng rời bỏ dịch vụ",
         "category": "Phân tích dữ liệu lớn và ứng dụng",
         "expected_result": "Không có",
@@ -1008,7 +1008,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Mô hình BERT đối với bài toán đọc hiểu tiếng Việt",
         "category": "Xử lý ngôn ngữ tự nhiên",
         "expected_result": "Không có",
@@ -1029,7 +1029,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Tóm tắt văn bản tóm lược sử dụng PEGASUS kết hợp Longformer",
         "category": "Xử lý ngôn ngữ tự nhiên",
         "expected_result": "Không có",
@@ -1050,7 +1050,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Trích xuất sự kiện trong văn bản tiếng Việt",
         "category": "Xử lý ngôn ngữ tự nhiên",
         "expected_result": "Không có",
@@ -1071,7 +1071,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Cải thiện độ chính xác của hệ thống dịch máy cho cặp ngôn ngữ Việt - Khmer dựa trên tăng cường dữ liệu",
         "category": "Xử lý ngôn ngữ tự nhiên",
         "expected_result": "Không có",
@@ -1092,7 +1092,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Xây dựng chiến lược lọc nhiễu để cải thiện hệ thống dịch máy Trung-Việt có giám sát",
         "category": "Xử lý ngôn ngữ tự nhiên",
         "expected_result": "Không có",
@@ -1113,7 +1113,7 @@
         }
     },
     {
-        "semester": "20221",
+        "semester": "2022.1",
         "title": "Ứng dụng học sâu trong phân tách giọng nói",
         "category": "Xử lý ngôn ngữ tự nhiên",
         "expected_result": "Không có",
