@@ -33,6 +33,13 @@ class ThesisData(RootModel, ThesisDataInput):
                     ("semester", ASCENDING),
                 ],
                 unique=False,
+            ),
+            IndexModel(
+                [
+                    ("semester", ASCENDING),
+                    ("student_data.student_id", ASCENDING),
+                ],
+                unique=True,
             )
         ]
 

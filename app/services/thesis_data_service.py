@@ -1,13 +1,74 @@
+import asyncio
+import io
 from typing import Optional, List
 from datetime import datetime
 
+import openpyxl
+from fastapi import UploadFile
 from beanie import PydanticObjectId
 from beanie.operators import RegEx, GTE, Eq, In
 
-from app.helpers.exceptions import NotFoundException
-from app.dto.thesis_data_dto import ThesisDataCreateRequest, ShortThesisData, FullThesisData
+from app.helpers.exceptions import NotFoundException, ThesisWrongFormatException
+from app.dto.thesis_data_dto import ShortThesisData, FullThesisData
 from app.models.thesis_data import ThesisData
 from app.worker.tasks.nlp_task import schedule_preprocess
+
+
+def parse_xlsx_thesis(xlsx_file):
+    wb = openpyxl.load_workbook(xlsx_file, read_only=True)
+    thesis = wb[wb.sheetnames[0]]
+    input_dict = {
+        "student_data": {}
+    }
+    counter = 0
+    column_range = [1,2,8,5]
+    for row in range(1, thesis.max_row+1):
+        if counter >= 7:
+            break
+        if row >= 200:
+            break
+        for column in column_range:
+            current_cell_value = str(thesis.cell(row, column).value)
+            if column == 1:
+                if not input_dict.get('student_data').get('student_name') and "Họ và tên sinh viên" in current_cell_value:
+                    input_dict['student_data']['student_name'] = thesis.cell(row, column+2).value
+                    counter += 1
+                elif not input_dict.get('title') and "Tên đề tài" in current_cell_value:
+                    input_dict['title'] = thesis.cell(row+1, column).value
+                    counter += 1
+                    break
+                elif not input_dict.get('expected_result') and "Sản phẩm kỳ vọng" in current_cell_value:
+                    input_dict['expected_result'] = str(thesis.cell(row+1, column).value).replace("-","").replace("\n", "").strip()
+                    counter += 1
+                    break
+                elif not input_dict.get('problem_solve') and "Vấn đề thực tiễn đồ án giải quyết" in current_cell_value:
+                    input_dict['problem_solve'] = str(thesis.cell(row+1, column).value).replace("-","").replace("\n", "").strip()
+                    counter += 1
+                    break
+            elif column == 2:
+                if not input_dict.get('category') and "Lựa chọn 1" in current_cell_value:
+                    input_dict['category'] = thesis.cell(row, column+1).value
+                    if thesis.cell(row + 1, column + 1).value:
+                        input_dict['category'] += ", " + str(thesis.cell(row+1, column+1).value)
+                    column_range.remove(2)
+                    counter += 1
+                    break
+            elif column == 8:
+                if not input_dict.get('student_data').get('student_id') and 'MSSV' in current_cell_value:
+                    input_dict['student_data']['student_id'] = str(thesis.cell(row, column+1).value)
+                    column_range.remove(8)
+                    counter += 1
+                    break
+            elif column == 5:
+                if not input_dict.get('semester') and current_cell_value == 'KỲ':
+                    input_dict['semester'] = str(thesis.cell(row, column+1).value)
+                    column_range.remove(5)
+                    counter += 1
+                    break    
+    wb.close()
+    if counter < 7:
+        return None
+    return input_dict
 
 class ThesisDataService:
     async def list_thesis(
@@ -44,12 +105,21 @@ class ThesisDataService:
 
     async def create(
         self,
-        thesis_input: ThesisDataCreateRequest,
+        file: UploadFile,
     ):
-        thesis_dict = thesis_input.dict()
-        model = ThesisData(**thesis_dict)
+        f = await file.read()
+        xlsx_file = io.BytesIO(f)
+        loop = asyncio.get_event_loop()
+        result = await loop.run_in_executor(None, parse_xlsx_thesis, xlsx_file)
+        print(result)
+        if not result:
+            raise ThesisWrongFormatException()
+        result['updated_at'] = datetime.utcnow()
+        model = ThesisData(**result)
         await model.save()
-        schedule_preprocess(model.dict())
+        task_id = schedule_preprocess(model.dict())
+        model.nlp_job_id = task_id
+        await model.save()
         return str(model.id)
 
     async def delete(

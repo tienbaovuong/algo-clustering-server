@@ -12,3 +12,7 @@ class ConflictException(Exception):
 
 class BadRequestException(Exception):
     pass
+
+
+class ThesisWrongFormatException(Exception):
+    pass

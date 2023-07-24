@@ -31,10 +31,10 @@ class NLP():
             line = " ".join(line)
             # Segmentation
             line = underthesea.word_tokenize(line, format="text")
-            line = " ".join(line)
+            line = "".join(line)
             # Extract feature
             input_ids = torch.tensor([self.tokenizer.encode(line)])
-
+            input_ids = torch.slice_copy(input_ids, 1, 0, 256)
             with torch.no_grad():
                 features = self.phobert(input_ids)
             v_features = features[0][:, 0, :]
