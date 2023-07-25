@@ -15,14 +15,13 @@ def multiply_array(input: list, multiplier: float):
         result.append(item * multiplier)
     return result
 
-def get_medium_array(input: list):
-    total = len(input)
+def get_medium_array(input: list, total_uik: float):
     result = np.zeros_like(input[0])
 
     for item in input:
         result += np.array(item)
     
-    result /= total
+    result /= total_uik
     return result.tolist()
 
 
@@ -44,10 +43,11 @@ class ThesisClusterService(ClusterService):
         list_expected = [multiply_array(item.expected_result_vector, uik) for uik, item in zip(uik_pow, data)]
         list_problem = [multiply_array(item.problem_solve_vector, uik) for uik, item in zip(uik_pow, data)]
         
+        total_uik = sum(uik_pow)
         new_centroid = ThesisClusterObject(
-            title_vector=get_medium_array(list_title),
-            category_vector=get_medium_array(list_category),
-            expected_result_vector=get_medium_array(list_expected),
-            problem_solve_vector=get_medium_array(list_problem)
+            title_vector=get_medium_array(list_title, total_uik),
+            category_vector=get_medium_array(list_category, total_uik),
+            expected_result_vector=get_medium_array(list_expected, total_uik),
+            problem_solve_vector=get_medium_array(list_problem, total_uik)
         )
         return new_centroid

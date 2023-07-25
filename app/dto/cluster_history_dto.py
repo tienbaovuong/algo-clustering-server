@@ -20,6 +20,7 @@ class ShortClusterHistory(BeanieDocumentWithId):
 
 # DTO for detail response
 class FullClusterHistory(ShortClusterHistory):
+    chosen_loop: Optional[int]
     clusters: List[ClusterPartialResult]
     non_clustered_thesis: List[MinimumThesisData]
     loss_values: List[float]
@@ -52,6 +53,7 @@ class ClusterHistoryPaginationResponse(BaseResponseData):
 class ClusterHistoryPutRequest(BaseModel):
     name: Optional[str]
     description: Optional[str]
+    chosen_loop: Optional[int]
     clusters: Optional[List[ClusterPartialResult]]
 
 

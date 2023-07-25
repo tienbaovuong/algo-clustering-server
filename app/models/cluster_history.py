@@ -41,6 +41,10 @@ class ClusterConfig(BaseModel):
     order: list = [0, 1, 2, 3]
     number_of_clusters: int = 10
     max_item_each_cluster: int = 10
+    max_loop: int = 50
+    upper_m: float = 1.1
+    lower_m: float = 9.1
+    alpha: float = 2.0
 
 
 class ClusterHistory(RootModel):
@@ -50,6 +54,7 @@ class ClusterHistory(RootModel):
     name: str
     description: Optional[str]
     clusters: List[ClusterPartialResult]
+    chosen_loop: Optional[int]
     loss_values: List[float]
     non_clustered_thesis: List[MinimumThesisData]
     updated_at: datetime
