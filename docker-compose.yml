@@ -1,10 +1,22 @@
 version: '3'
 services:
+  mongodb:
+    image: bitnami/mongodb
+    environment:
+      ALLOW_EMPTY_PASSWORD: "yes"
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb:/bitnami/mongodb
+
   clustering:
     build: .
+    depends_on:
+      - mongodb
     image: clusterbackend.azurecr.io/clustering
     ports:
-      - "80:80"
+      - "8001:80"
 
   redis:
     image: bitnami/redis
@@ -21,3 +33,7 @@ services:
     depends_on:
       - clustering
       - redis
+
+volumes:
+  mongodb:
+  redis:

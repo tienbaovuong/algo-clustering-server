@@ -1,3 +1,7 @@
 __pycache__
 venv/
+scripts
+base64*
+ssl*
+model
 # .env

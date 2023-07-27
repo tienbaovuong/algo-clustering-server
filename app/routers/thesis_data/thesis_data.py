@@ -1,9 +1,13 @@
 from datetime import datetime
 
-from fastapi import APIRouter, Query
+from fastapi import APIRouter, Query, Depends, UploadFile, File
+from pymongo.errors import DuplicateKeyError
+
 from app.dto.common import (BaseResponse, BaseResponseData)
+from app.helpers.auth_helpers import get_current_user
 from app.dto.thesis_data_dto import (ThesisDataResponse, ThesisDataPaginationResponse, ThesisDataPaginationData, ThesisDataCreateRequest)
 from app.services.thesis_data_service import ThesisDataService
+from app.helpers.exceptions import ThesisWrongFormatException
 
 route = APIRouter(tags=['Thesis Data'], prefix="/thesis_data")
 
@@ -13,6 +17,7 @@ route = APIRouter(tags=['Thesis Data'], prefix="/thesis_data")
     response_model=ThesisDataPaginationResponse,
 )
 async def get_list_thesis_data(
+    user: str = Depends(get_current_user),
     title: str = Query(None),
     semester: str = Query(None),
     created_at: str = Query(None),
@@ -44,6 +49,7 @@ async def get_list_thesis_data(
 )
 async def get_thesis_data_by_id(
     thesis_id: str,
+    user: str = Depends(get_current_user),
 ):
     thesis_data = await ThesisDataService().get(
         thesis_id=thesis_id,
@@ -60,11 +66,23 @@ async def get_thesis_data_by_id(
     response_model=BaseResponseData,
 )
 async def create_thesis_data(
-    thesis_input: ThesisDataCreateRequest,
+    file: UploadFile = File(...),
+    user: str = Depends(get_current_user),
 ):
-    created_thesis_id = await ThesisDataService().create(
-        thesis_input=thesis_input,
-    )
+    try:
+        created_thesis_id = await ThesisDataService().create(
+            file=file,
+        )
+    except DuplicateKeyError:
+        return BaseResponse(
+            error_code=1,
+            message="Duplicated thesis"
+        )
+    except ThesisWrongFormatException:
+        return BaseResponse(
+            error_code=2,
+            message="Wrong format or missing data"
+        )
     return BaseResponseData(
         message="Created thesis successfully",
         data=created_thesis_id
@@ -76,7 +94,8 @@ async def create_thesis_data(
     response_model=BaseResponse
 )
 async def delete_thesis_by_id(
-    thesis_id: str
+    thesis_id: str,
+    user: str = Depends(get_current_user),
 ):
     await ThesisDataService().delete(
         thesis_id=thesis_id

@@ -1,5 +1,6 @@
-from fastapi import APIRouter, Query
+from fastapi import APIRouter, Query, Depends
 from app.dto.common import BaseResponse
+from app.helpers.auth_helpers import get_current_user
 from app.dto.cluster_history_dto import (ClusterHistoryResponse, ClusterHistoryPaginationData, ClusterHistoryPaginationResponse, ClusterHistoryPutRequest)
 from app.services.cluster_history_service import ClusterHistoryService
 
@@ -12,6 +13,7 @@ route = APIRouter(tags=['Cluster History'], prefix="/cluster_history")
     response_model=ClusterHistoryPaginationResponse
 )
 async def get_list_cluster_history(
+    user: str = Depends(get_current_user),
     name: str = Query(None),
     page: int = Query(1),
     limit: int = Query(10),
@@ -36,6 +38,7 @@ async def get_list_cluster_history(
 )
 async def get_history_by_id(
     cluster_history_id: str,
+    user: str = Depends(get_current_user),
 ):
     history_data = await ClusterHistoryService().get(
         cluster_history_id=cluster_history_id,
@@ -53,6 +56,7 @@ async def get_history_by_id(
 async def update_cluster_history_data(
     cluster_history_id: str,
     update_history_data: ClusterHistoryPutRequest,
+    user: str = Depends(get_current_user),
 ):
     updated_data = await ClusterHistoryService().put(
         cluster_history_id=cluster_history_id,
@@ -69,6 +73,7 @@ async def update_cluster_history_data(
 )
 async def delete_cluster_history_by_id(
     cluster_history_id: str,
+    user: str = Depends(get_current_user),
 ):
     await ClusterHistoryService().delete(
         cluster_history_id=cluster_history_id,
