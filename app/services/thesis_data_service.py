@@ -55,7 +55,7 @@ def parse_xlsx_thesis(xlsx_file):
                     break
             elif column == 8:
                 if not input_dict.get('student_data').get('student_id') and 'MSSV' in current_cell_value:
-                    input_dict['student_data']['student_id'] = str(thesis.cell(row, column+1).value)
+                    input_dict['student_data']['student_id'] = str(int(thesis.cell(row, column+1).value))
                     column_range.remove(8)
                     counter += 1
                     break
