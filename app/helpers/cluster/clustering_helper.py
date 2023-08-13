@@ -52,7 +52,7 @@ class ClusteringAlgorithm:
 
         delta_array = []
         for i in range(N):
-            sorted_arr  = sorted(distance_array[i])
+            sorted_arr = sorted(distance_array[i])
             sum_i = sum(sorted_arr[:mean_c])
             delta_array.append(sum_i)
 
@@ -63,7 +63,6 @@ class ClusteringAlgorithm:
                 (upper_m - lower_m) * \
                 pow((delta_array[i]-min_arr) / (max_arr-min_arr), alpha)
             self.fuzzi_m.append(fuzzi_m_i)
-        
 
     def clustering(self):
         self._generate_centroid()
@@ -97,18 +96,24 @@ class ClusteringAlgorithm:
             random_list = list(
                 set([i for i in range(self.n_clusters - 1)]) - set(exclude_list))
             next_centroid = random.choice(random_list)
+            d = 0
+            last_centroid = self.centroid[-1]
+            last_last_centroid = self.centroid[-1]
+            if _ > 0:
+                last_last_centroid = self.centroid[-2]
             for i in range(len(self.dataset)):
                 if i in exclude_list:
                     continue
 
                 point = self.dataset[i]
-                last_centroid = self.centroid[-1]
 
-                d = sys.maxsize
                 temp_dist = self._calculate_point_distance(
-                    last_centroid, point)
-                if temp_dist < d:
+                    last_centroid, point) + self._calculate_point_distance(
+                    last_last_centroid, point
+                )
+                if temp_dist > d:
                     next_centroid = i
+                    d = temp_dist
 
             exclude_list.append(next_centroid)
             self.centroid.append(self.dataset[next_centroid])

@@ -22,7 +22,7 @@ def parse_xlsx_thesis(xlsx_file):
     }
     counter = 0
     column_range = [1,2,8,5]
-    for row in range(1, thesis.max_row+1):
+    for row in range(1, 200):
         if counter >= 7:
             break
         if row >= 200:
@@ -173,11 +173,11 @@ class ThesisDataService:
                 if cate in category_dict.keys():
                     category_dict[cate] += 1
                 else:
-                    category_dict[cate] = 0
+                    category_dict[cate] = 1
 
-        order = sorted(category_dict, reverse=True)
+        order = sorted(category_dict.items(), key=lambda x:x[1], reverse=True)
         if len(order) > 1:
-            return [order[0], order[1]]
+            return [order[0][0], order[1][0]]
         elif len(order) == 1:
-            return [order[0]]
+            return [order[0][0]]
         return ["Default cluster name"]
